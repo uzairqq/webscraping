@@ -10,5 +10,6 @@ with open('home.html', 'r') as html_file:
     print(tags)
     print(tagsWithText)
 
-    findsAllTags=soup.find_all('h5')
-    print(findsAllTags)
+    findsAllTags = soup.find_all('h5')
+    for course in findsAllTags:
+        print(course.text)
