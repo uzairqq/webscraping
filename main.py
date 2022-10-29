@@ -14,11 +14,17 @@ for job in jobs:
             'h3', class_="joblist-comp-name").text.strip()
         job_skills = job.find(
             'span', class_="srp-skills").text.strip().replace(' ', '')
+        more_info = job.header.h2.a['href']
 
-        print(f'''
-        Company Name: {company_name}
-        Skills Needed: {job_skills}
-        Job Posted: {job_posted}
-        ''')
+        print(f"Company Name: {company_name}")
+        print(f"Required Skills: {job_skills}")
+        print(f"This Job Posted: {job_posted}")
+        print(f"More Information: {more_info}")
+
+        # print(f'''
+        # Company Name: {company_name}
+        # Skills Needed: {job_skills}
+        # Job Posted: {job_posted}
+        # ''')
 
         print('')
