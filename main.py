@@ -11,7 +11,7 @@ def findJobs():
         'https://www.timesjobs.com/candidate/job-search.html?searchType=personalizedSearch&from=submit&txtKeywords=python&txtLocation=').text
     soup = BeautifulSoup(html_content, 'lxml')
     jobs = soup.find_all('li', class_="clearfix job-bx wht-shd-bx")
-    for job in jobs:
+    for index, job in enumerate(jobs):
         job_posted = job.find(
             'span', class_="sim-posted").text.strip()
         if 'few' not in job_posted:
@@ -22,19 +22,12 @@ def findJobs():
             more_info = job.header.h2.a['href']
 
             if unfimiliar_skills not in job_skills:
-
-                print(f"Company Name: {company_name}")
-                print(f"Required Skills: {job_skills}")
-                print(f"This Job Posted: {job_posted}")
-                print(f"More Information: {more_info}")
-
-            # print(f'''
-            # Company Name: {company_name}
-            # Skills Needed: {job_skills}
-            # Job Posted: {job_posted}
-            # ''')
-
-            print('')
+                with open(f'posts/{index}.txt', 'w') as f:
+                    f.write(f"Company Name: {company_name}")
+                    f.write(f"Required Skills: {job_skills}")
+                    f.write(f"This Job Posted: {job_posted}")
+                    f.write(f"More Information: {more_info}")
+                    print(f"File Saved: {index}")
 
 
 if __name__ == '__main__':
