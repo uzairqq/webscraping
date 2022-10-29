@@ -23,10 +23,10 @@ def findJobs():
 
             if unfimiliar_skills not in job_skills:
                 with open(f'posts/{index}.txt', 'w') as f:
-                    f.write(f"Company Name: {company_name}")
-                    f.write(f"Required Skills: {job_skills}")
-                    f.write(f"This Job Posted: {job_posted}")
-                    f.write(f"More Information: {more_info}")
+                    f.write(f"Company Name: {company_name} \n")
+                    f.write(f"Required Skills: {job_skills} \n")
+                    f.write(f"This Job Posted: {job_posted} \n")
+                    f.write(f"More Information: {more_info} \n")
                     print(f"File Saved: {index}")
 
 
