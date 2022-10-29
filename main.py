@@ -41,5 +41,5 @@ if __name__ == '__main__':
     while True:
         findJobs()
         timewait = 10
-        print(f"Waiting {timewait} seconds...")
-        time.sleep(timewait*60)
+        print(f"Waiting {timewait} Minutes...")
+        time.sleep(timewait * 60)
